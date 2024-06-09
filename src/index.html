@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Electron App</title>
-  <link rel="stylesheet" href="index.css">
+  <title>ServonApp</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .tabs { display: flex; cursor: pointer; margin-bottom: 10px; }
+    .tab { padding: 10px; border: 1px solid #ccc; border-bottom: none; }
+    .tab.active { background-color: #eee; }
+    .tab-content { display: none; border: 1px solid #ccc; padding: 20px; }
+    .tab-content.active { display: block; }
+  </style>
 </head>
 <body>
-  <div class="navbar">
-    <a id="announcements-link">Announcements</a>
-    <a id="download-shop-link">Download Shop</a>
+  <div class="tabs">
+    <div class="tab active" data-tab="download">Download</div>
+    <div class="tab" data-tab="donate">Donate</div>
   </div>
-  <div id="content">Select an option from the menu.</div>
+  <div id="download" class="tab-content active">
+    <h2>Download</h2>
+    <button id="DownloadServon-Api" onclick="DownloadServon()">Download Servon-Api</button>
+  </div>
+  <div id="donate" class="tab-content">
+    <h2>Donate</h2>
+  </div>
   <script src="javascript/renderer.js"></script>
+  <script src="javascript/Buttons.js"></script>
 </body>
 </html>

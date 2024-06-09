@@ -6,17 +6,17 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'javascript/renderer.js'),
-      contextIsolation: true,
-      enableRemoteModule: false
-    }
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
   });
 
   mainWindow.setMenuBarVisibility(false);
   mainWindow.loadFile('src/index.html');
+  mainWindow.webContents.openDevTools()
 }
 
-app.whenReady().then(createWindow);
+app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
