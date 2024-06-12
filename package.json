@@ -33,6 +33,7 @@
     "express": "^4.19.2",
     "patreon": "^0.0.1",
     "socket.io": "^4.7.5",
-    "socket.io-client": "^4.7.5"
+    "socket.io-client": "^4.7.5",
+    "stripe": "^15.10.0"
   }
 }

@@ -1,6 +1,43 @@
-body { font-family: Arial, sans-serif; }
-.tabs { display: flex; cursor: pointer; margin-bottom: 10px; }
-.tab { padding: 10px; border: 1px solid #ccc; border-bottom: none; }
-.tab.active { background-color: #eee; }
-.tab-content { display: none; border: 1px solid #ccc; padding: 20px; }
-.tab-content.active { display: block; }
+/*Body*/
+body{
+  font-family: Arial, sans-serif;
+}
+
+/*Divs*/
+div.tabs{
+  display: flex;
+   cursor: pointer;
+  margin-bottom: 10px;
+}
+
+div.tab{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+div.tab.active{
+  background-color: #eee; }
+
+div.tab-content{
+  display: none; border: 1px solid #ccc; padding: 20px; }
+
+div.tab-content.active{
+  display: block;
+}
+
+
+/*Buttons*/
+button.DownloadBtn{
+  background-color: black;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+
+  text-align: center;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
+
+  width: 250px;
+  height: 35px;
+}
