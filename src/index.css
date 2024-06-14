@@ -1,43 +1,73 @@
-/*Body*/
-body{
-  font-family: Arial, sans-serif;
+body {
+  font-family: 'Fredoka One';
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
 }
 
-/*Divs*/
-div.tabs{
+/*Home*/
+div.tabs {
   display: flex;
-  margin-bottom: 10px;
+  justify-content: center;
+  background-color: #333;
 }
 
-div.tab{
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-bottom: none;
+div.tab {
+  padding: 14px 20px;
   cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
 }
 
-div.tab.active{
-  background-color: #eee; }
+div.tab:hover {
+  background-color: #575757;
+}
 
-div.tab-content{
-  display: none; border: 1px solid #ccc; padding: 20px; }
+div.tab.active {
+  background-color: #4CAF50;
+}
 
-div.tab-content.active{
+div.tab-content {
+  display: none;
+  padding: 20px;
+  background-color: white;
+}
+
+div.tab-content.active {
   display: block;
 }
 
-
-/*Buttons*/
-button.DownloadBtn{
-  background-color: black;
-  border-radius: 3px;
-  outline: none;
-  color: #fff;
-  cursor: pointer;
-
+h2 {
   text-align: center;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
+  color: #333;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  margin-bottom: 15px;
+}
 
-  width: 250px;
-  height: 35px;
+p.AnnouncmentsText {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/*Download*/
+button.DownloadBtn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Fredoka One';
+}
+
+button.DownloadBtn:hover {
+  background-color: #45a049;
+}
+
+/*Donate*/
+div.donationDiv{
+  text-align: center;
 }

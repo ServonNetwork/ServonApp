@@ -6,12 +6,14 @@
 </head>
 <body>
 
+  <!--Tabs-->
   <div class="tabs">
     <div class="tab active" data-tab="home">Home</div>
     <div class="tab" data-tab="download">Download</div>
     <div class="tab" data-tab="donate">Donate</div>
   </div>
 
+  <!--Home-->
   <div id="home" class="tab-content active">
     <h2>Announcements</h2>
     <p class="AnnouncmentsText"></p>
@@ -19,13 +21,22 @@
     <p class="AnnouncmentsText"></p>
   </div>
 
+  <!--Download-->
   <div id="download" class="tab-content">
     <h2>Download</h2>
     <button class="DownloadBtn" onclick="DownloadServon()">Download Servon-Api</button>
   </div>
 
+  <!--Donate-->
   <div id="donate" class="tab-content">
-    <h2>Donate</h2>
+    <div class="donationDiv">
+      <h2 class="donateH2">Donate</h2>
+      <form action="https://www.paypal.com/donate" method="post" target="_top" class="donateForm">
+        <input type="hidden" name="hosted_button_id" value="BXFJAK6ZSWRC6" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
+        </form>  
+    </div>
   </div>
 
   <!--Frontend-->
