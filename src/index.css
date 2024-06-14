@@ -6,7 +6,6 @@ body{
 /*Divs*/
 div.tabs{
   display: flex;
-   cursor: pointer;
   margin-bottom: 10px;
 }
 
@@ -14,6 +13,7 @@ div.tab{
   padding: 10px;
   border: 1px solid #ccc;
   border-bottom: none;
+  cursor: pointer;
 }
 
 div.tab.active{
