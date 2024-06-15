@@ -8,6 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     color: #333;
+    background-color: gray;
 }
 
 .main-container {
@@ -23,7 +24,7 @@ body {
 .content h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #4CAF50;
+    color: #ffee57;
 }
 
 .content p {
