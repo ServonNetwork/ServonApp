@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const axios = require('axios');
 const path = require('path');
 
@@ -35,6 +35,7 @@ function createWindow() {
     mainWindow.loadFile('src/pages/Error.html');
   });
   
+  checkForUpdates();
   MainWindowHandler();
 }
 
@@ -52,6 +53,7 @@ app.on('activate', () => {
   }
 });
 
+//Custom//
 function MainWindowHandler(){
   while (true) {
     axios.get('https://servon-app-api.vercel.app/state')
@@ -73,4 +75,52 @@ function MainWindowHandler(){
     setTimeout(MainWindowHandler, 1000);
     return; 
   }
+}
+
+async function checkForUpdates() {
+  try {
+    const response = await axios.get('https://servon-app-api.vercel.app/update-info');
+    const latestVersion = response.data.version;
+    const updateUrl = response.data.url;
+
+    const currentVersion = app.getVersion();
+    if (latestVersion !== currentVersion) {
+      const downloadResponse = await axios({
+        url: updateUrl,
+        method: 'GET',
+        responseType: 'stream',
+      });
+
+      const updatePath = path.join(app.getPath('userData'), `servonapp-${latestVersion} Setup`);
+      const writer = fs.createWriteStream(updatePath);
+
+      downloadResponse.data.pipe(writer);
+
+      writer.on('finish', () => {
+        dialog.showMessageBox({
+          type: 'info',
+          title: 'Update available',
+          message: 'A new update is available. The application will now close and install the update.',
+        }).then(() => {
+          installUpdate(updatePath);
+        });
+      });
+
+      writer.on('error', () => {
+        console.error('Error downloading the update');
+      });
+    }
+  } catch (error) {
+    console.error('Error checking for updates:', error);
+  }
+}
+
+function installUpdate(updatePath) {
+  exec(`"${updatePath}"`, (error) => {
+    if (error) {
+      console.error('Error running the installer:', error);
+    } else {
+      app.quit();
+    }
+  });
 }
