@@ -5,22 +5,26 @@ body {
   background-color: #f0f0f0;
 }
 
-/*Home*/
+/*Tabs*/
 div.tabs {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: #ffffff;
 }
 
 div.tab {
   padding: 14px 20px;
   cursor: pointer;
-  color: white;
+  color: rgb(0, 0, 0);
+  margin: 3px;
+  margin-top: 15px;
+  border: 2.5px solid black;
+  border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 div.tab:hover {
-  background-color: #575757;
+  background-color: #4caf4f91;
 }
 
 div.tab.active {
@@ -37,6 +41,7 @@ div.tab-content.active {
   display: block;
 }
 
+/*Home*/
 h2 {
   text-align: center;
   color: #333;
@@ -53,12 +58,32 @@ p.AnnouncmentsText {
 }
 
 /*Download*/
+div.obj1{
+  border-radius: 5px;
+  border: 3px solid #4CAF50;
+  width: 350px;
+  height: 350px;
+  align-self: center;
+  text-align: center;
+  align-content: center;
+}
+
+img.Servon-ApiImg{
+  width: 275px;
+  height: 275px;
+  margin: 5px;
+}
+
 button.DownloadBtn {
   padding: 10px 20px;
+  width: 275px;
+  height: 35px;
   background-color: #4CAF50;
   color: white;
   border: none;
   cursor: pointer;
+  border: 2.5px solid black;
+  border-radius: 5px;
   transition: background-color 0.3s;
   font-family: 'Fredoka One';
 }

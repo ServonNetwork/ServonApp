@@ -1,7 +1,7 @@
 {
   "name": "servonapp",
   "productName": "servonapp",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "The Application from Servon",
   "main": "src/index.js",
   "scripts": {
@@ -29,6 +29,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.12",
     "axios": "^1.7.2",
     "electron-squirrel-startup": "^1.0.1",
     "express": "^4.19.2"

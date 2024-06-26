@@ -3,6 +3,8 @@ const axios = require('axios');
 const path = require('path');
 
 let mainWindow;
+
+let errorMode = false;
 let maintenanceMode = false;
 
 function createWindow() {
@@ -25,13 +27,16 @@ function createWindow() {
     if (state.maintenanceMode) {
       mainWindow.loadFile('src/pages/MaintenanceWork.html');
       maintenanceMode = true;
+      errorMode = false;
     } else {
       mainWindow.loadFile('src/index.html');
       maintenanceMode = false;
+      errorMode = false;
     }
   })
   .catch(error => {
     console.error('Error fetching state from server:', error);
+    errorMode = true;
     mainWindow.loadFile('src/pages/Error.html');
   });
   
@@ -59,17 +64,22 @@ function MainWindowHandler(){
     axios.get('https://servon-app-api.vercel.app/state')
     .then(response => {
       const state = response.data;
-      if (state.maintenanceMode && maintenanceMode == false) {
+      if (state.maintenanceMode && maintenanceMode == false && errorMode == false) {
         mainWindow.loadFile('src/pages/MaintenanceWork.html');
         maintenanceMode = true;
-      } else if (state.maintenanceMode == false && maintenanceMode == true) {
+        errorMode = false;
+      } else if (state.maintenanceMode == false && maintenanceMode == true && errorMode == false) {
         mainWindow.loadFile('src/index.html');
         maintenanceMode = false;
+        errorMode = false;
       }
     })
     .catch(error => {
-      console.error('Error fetching state from server:', error);
-      mainWindow.loadFile('src/pages/Error.html');
+      if(errorMode == false){
+        console.error('Error fetching state from server:', error);
+        errorMode = true;
+        mainWindow.loadFile('src/pages/Error.html');
+      }
     });
 
     setTimeout(MainWindowHandler, 1000);
@@ -80,8 +90,8 @@ function MainWindowHandler(){
 async function checkForUpdates() {
   try {
     const response = await axios.get('https://servon-app-api.vercel.app/update-info');
-    const latestVersion = response.data.version;
-    const updateUrl = response.data.url;
+    const latestVersion = response.data.latest_version;
+    const updateUrl = response.data.file_url;
 
     const currentVersion = app.getVersion();
     if (latestVersion !== currentVersion) {
@@ -91,7 +101,7 @@ async function checkForUpdates() {
         responseType: 'stream',
       });
 
-      const updatePath = path.join(app.getPath('userData'), `servonapp-${latestVersion} Setup`);
+      const updatePath = path.join(app.getPath('userData'), `servonapp-${latestVersion} Setup.exe`);
       const writer = fs.createWriteStream(updatePath);
 
       downloadResponse.data.pipe(writer);
@@ -109,6 +119,9 @@ async function checkForUpdates() {
       writer.on('error', () => {
         console.error('Error downloading the update');
       });
+    }
+    else{
+      //Todo #1.1: Implement debuging
     }
   } catch (error) {
     console.error('Error checking for updates:', error);
