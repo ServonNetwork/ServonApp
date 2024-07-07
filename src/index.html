@@ -16,17 +16,35 @@
     <div id="tab_donate" class="tab" data-tab="donate">Donate</div>
   </div>
 
+  <!--Settings-->
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+
+        <form>
+          <h2 id="settings_h2">Settings</h2>
+          <!--Lang Select-->
+          <label for="languageSwitcher" id="settings_languageSwitcher_label">Selected Language:</label>
+          <select id="languageSwitcher" class="languageSwitcher">
+            <option value="en" id="option_en">English</option>
+            <option value="de" id="option_de">German</option>
+          </select>
+        </form>
+    </div>
+</div>
+
   <!--Home-->
   <div id="home" class="tab-content active">
-    <h2 id="settings_h2">Settings</h2>
-    <select id="languageSwitcher">
-      <option value="en" id="option_en">English</option>
-      <option value="de" id="option_de">German</option>
-    </select>
+    <p id="follower_p">Follower: <p id="follower_count"></p></p>
+
+    <img src="assets/images/settings.png" id="openSettingsBtn" alt="Settings" class="settings-icon">
   </div>
 
   <!--Download-->
   <div id="download" class="tab-content">
+    <img src="assets/images/settings.png" id="openSettingsBtn" alt="Settings" class="settings-icon">
+
+
     <h2 id="download_h2">Download</h2>
     <div class="objs">
       <div class="obj1">
@@ -38,35 +56,25 @@
 
   <!--Donate-->
   <div id="donate" class="tab-content">
+    <img src="assets/images/settings.png" id="openSettingsBtn" alt="Settings" class="settings-icon">
+  
     <div class="donationDiv">
       <h2 id="donate_h2" class="donateH2">Donate</h2>
       <form action="https://www.paypal.com/donate" method="post" target="_blank" class="donateForm">
         <input type="hidden" name="hosted_button_id" value="BXFJAK6ZSWRC6" />
         <input type="image" src="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
-        </form>  
+      </form>  
     </div>
-
-    <!--
-    <dir class="adDiv">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-4543838595921355"
-           data-ad-slot="7916596308"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </dir>
-  </div>
-  -->
+  <div>
 
   <!--Frontend-->
   <script src="javascript/frontend/renderer.js"></script>
   <script src="javascript/frontend/buttons.js"></script>
   <script src="javascript/frontend/lang.js"></script>
+  <script src="javascript/frontend/settings.js"></script>
 
   <!--Backend-->
+  <!-- <script src="javascript/backend/getData.js"></script> -->
 </body>
 </html>

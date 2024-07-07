@@ -1,7 +1,7 @@
 {
   "name": "servonapp",
-  "productName": "servonapp",
-  "version": "0.2.0",
+  "productName": "ServonApp",
+  "version": "0.2.2",
   "description": "The Application from Servon",
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,25 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "build-installer": "electron-builder"
+  },
+  "build": {
+    "appId": "servon-app",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/assets/images/logo.ico"
+    },
+    "nsis": {
+      "installerIcon": "src/assets/images/logo.ico",
+      "uninstallerIcon": "src/assets/images/logo.ico",
+      "uninstallDisplayName": "ServonApp",
+      "license": "license.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.4.0",
@@ -32,6 +50,8 @@
     "@vercel/speed-insights": "^1.0.12",
     "axios": "^1.7.2",
     "electron-squirrel-startup": "^1.0.1",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.4.5"
   }
 }

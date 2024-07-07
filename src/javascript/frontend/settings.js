@@ -1,3 +1,27 @@
+//Open and Close Settings//
+var modal = document.getElementById("settingsModal");
+
+var btn = document.getElementById("openSettingsBtn");
+
+var span = document.getElementsByClassName("closeBtn")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+//Settings//
+
+//Lang//
 function loadTranslations(lang) {
   fetch(__dirname + `/assets/lang/${lang}.json`)
     .then(response => {

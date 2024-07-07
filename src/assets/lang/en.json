@@ -4,9 +4,12 @@
     "tab_donate": "Donate",
 
     "settings_h2": "Settings",
+    "settings_languageSwitcher_label": "Selected Language:",
 
     "option_en": "English",
     "option_de": "German",
+
+    "follower_p": "Follower: ",
 
     "download_h2": "Download",
     "servon_download_btn" : "Download Servon-Api",

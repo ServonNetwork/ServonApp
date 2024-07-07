@@ -1,12 +1,15 @@
 {
     "tab_home" : "Home",
-    "tab_download": "Herunterladens",
+    "tab_download": "Herunterladen",
     "tab_donate": "Spenden",
 
     "settings_h2": "Einstellungen",
+    "settings_languageSwitcher_label": "Ausgewählte Sprache:",
 
     "option_en": "Englisch",
     "option_de": "Deutsch",
+
+    "follower_p": "Abonnenten: ",
 
     "download_h2": "Herunterladen",
     "servon_download_btn" : "Servon-Api Herunterladen",

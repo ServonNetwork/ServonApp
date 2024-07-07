@@ -1,8 +1,77 @@
+:root {
+  --main-border-color: #4CAF50;
+  --main-border-hover-color: #45a049;
+}
+
 body {
   font-family: 'Fredoka One';
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
+}
+
+/*Settings*/
+div.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+div.modal-content {
+  background-color: #fefefe;
+  border-radius: 15px;
+  margin: 15% auto;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+span.closeBtn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+span.closeBtn:hover,
+span.closeBtn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img.settings-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+/*Settings Options*/
+select.colorSelect {
+  width: 250px;
+  height: 35px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2.5px solid #4caf4f91;
+}
+
+select.languageSwitcher{
+  width: 250px;
+  height: 35px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2.5px solid #4caf4f91;
 }
 
 /*Tabs*/
@@ -28,7 +97,7 @@ div.tab:hover {
 }
 
 div.tab.active {
-  background-color: #4CAF50;
+  border: 2.5px solid var(--main-border-color);
 }
 
 div.tab-content {
@@ -60,7 +129,7 @@ p.AnnouncmentsText {
 /*Download*/
 div.obj1{
   border-radius: 5px;
-  border: 3px solid #4CAF50;
+  border: 3px solid var(--main-border-color);
   width: 350px;
   height: 350px;
   align-self: center;
@@ -78,7 +147,7 @@ button.DownloadBtn {
   padding: 10px 20px;
   width: 275px;
   height: 35px;
-  background-color: #4CAF50;
+  background-color: var(--main-border-color);
   color: white;
   border: none;
   cursor: pointer;
@@ -89,7 +158,7 @@ button.DownloadBtn {
 }
 
 button.DownloadBtn:hover {
-  background-color: #45a049;
+  background-color: var(--main-border-hover-color);
 }
 
 /*Donate*/

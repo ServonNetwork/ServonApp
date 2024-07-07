@@ -18,6 +18,7 @@ function createWindow() {
     },
   });
 
+  //mainWindow.webContents.openDevTools()
   mainWindow.maximize();
   mainWindow.setMenuBarVisibility(false);
 
