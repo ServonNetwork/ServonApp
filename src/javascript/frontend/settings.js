@@ -6,17 +6,17 @@ var btn = document.getElementById("openSettingsBtn");
 var span = document.getElementsByClassName("closeBtn")[0];
 
 btn.onclick = function() {
-    modal.style.display = "block";
+  modal.style.display = "block";
 }
 
 span.onclick = function() {
-    modal.style.display = "none";
+  modal.style.display = "none";
 }
 
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 //Settings//
@@ -49,3 +49,5 @@ document.getElementById('languageSwitcher').addEventListener('change', (e) => {
   console.log(`Selected language: ${selectedLang}`);
   loadTranslations(selectedLang);
 });
+
+module.exports = selectedLang;

@@ -31,13 +31,23 @@
           </select>
         </form>
     </div>
-</div>
+  </div>
+
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+
+        <form>
+          <h2 id="profile_h2">Profile</h2>
+          <p id="follower_p">Follower: <p id="follower_count"></p></p>
+        </form>
+    </div>
+  </div>
 
   <!--Home-->
   <div id="home" class="tab-content active">
-    <p id="follower_p">Follower: <p id="follower_count"></p></p>
-
     <img src="assets/images/settings.png" id="openSettingsBtn" alt="Settings" class="settings-icon">
+    <img src="assets/images/profile.png" id="openProfileBtn" alt="Profile" class="profile-icon">
   </div>
 
   <!--Download-->
@@ -75,6 +85,9 @@
   <script src="javascript/frontend/settings.js"></script>
 
   <!--Backend-->
-  <!-- <script src="javascript/backend/getData.js"></script> -->
+  <script src="javascript/backend/profileSystem.js"></script>
+
+  <!--Save-->
+  <script src="javascript/json.js"></script>
 </body>
 </html>

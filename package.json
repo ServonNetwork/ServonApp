@@ -1,7 +1,7 @@
 {
   "name": "servonapp",
   "productName": "ServonApp",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "The Application from Servon",
   "main": "src/index.js",
   "scripts": {
@@ -51,7 +51,9 @@
     "axios": "^1.7.2",
     "electron-squirrel-startup": "^1.0.1",
     "express": "^4.19.2",
+    "fs": "^0.0.1-security",
     "mongodb": "^6.8.0",
-    "mongoose": "^8.4.5"
+    "mongoose": "^8.4.5",
+    "webrtc": "^1.14.1"
   }
 }

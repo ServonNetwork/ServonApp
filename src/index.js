@@ -2,6 +2,8 @@ const { app, BrowserWindow } = require('electron');
 const axios = require('axios');
 const path = require('path');
 
+const testingMode = "Login";
+
 let mainWindow;
 
 let errorMode = false;
@@ -18,7 +20,7 @@ function createWindow() {
     },
   });
 
-  //mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
   mainWindow.maximize();
   mainWindow.setMenuBarVisibility(false);
 
@@ -30,7 +32,12 @@ function createWindow() {
       maintenanceMode = true;
       errorMode = false;
     } else {
-      mainWindow.loadFile('src/index.html');
+      if(testingMode == "Login"){
+        mainWindow.loadFile('src/pages/Login.html')
+      }else{
+        mainWindow.loadFile('src/index.html');
+      }
+
       maintenanceMode = false;
       errorMode = false;
     }
